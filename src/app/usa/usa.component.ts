@@ -12,7 +12,7 @@ export class UsaComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  mybearerToken= "Bearer "+localStorage.getItem("TOKEN");
+  mybearerToken = localStorage.getItem("TOKEN");
 
   value:string = "my india"  
  
@@ -26,7 +26,8 @@ export class UsaComponent implements OnInit {
       })
     };
 
-    this.http.post('http://localhost:4000/check',this.value,httpOptions).subscribe();
+    //this.http.post('http://localhost:4000/check',this.value,httpOptions).subscribe();
+    this.http.post('http://localhost:4000/check',this.value).subscribe();
 
   }
 
