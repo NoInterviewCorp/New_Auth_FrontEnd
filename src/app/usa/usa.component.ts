@@ -12,22 +12,34 @@ export class UsaComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
 
-  mybearerToken = localStorage.getItem("TOKEN");
+  mybearerToken= "Bearer "+localStorage.getItem("TOKEN");
 
   value:string = "my india"  
  
+
+  // oncheck()
+  // {
+
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Authorization': this.mybearerToken
+  //     })
+  //   };
+
+  //  // this.http.post('http://localhost:4000/check',this.value,httpOptions).subscribe();
+  //   this.http.post('http://localhost:4000/check',this.value).subscribe();
+
+  // }
 
   oncheck()
   {
 
     const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': this.mybearerToken
-      })
-    };
-
-    //this.http.post('http://localhost:4000/check',this.value,httpOptions).subscribe();
-    this.http.post('http://localhost:4000/check',this.value).subscribe();
+          headers: new HttpHeaders({
+            'Authorization': this.mybearerToken
+          })
+        };
+    this.http.get("http://localhost:7000/orders-api/orders").subscribe(res=>console.log(res));
 
   }
 
