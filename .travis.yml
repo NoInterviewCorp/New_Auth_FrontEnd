@@ -7,7 +7,7 @@ dist: trusty
 
 branches:
   only:
-  - Auth_FrontEnd
+  - master
 
 cache:
   directories:
