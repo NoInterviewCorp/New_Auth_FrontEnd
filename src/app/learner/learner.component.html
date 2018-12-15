@@ -2,11 +2,11 @@
 
 <div class="learner">
     <div class="sign-in">
-        <h3>Sign in</h3>
+        <h3>Sign In</h3>
         <!-- (ngSubmit)="onSubmit(signIn.value)" -->
         <form #signIn="ngForm" [formGroup]="registerForm" >
             <div class="form-group" >
-              <label for="InputEmail1">Email address</label>
+              <label for="InputEmail1">Email Address</label>
               <input ngModel name="email" type="email" formControlName="email" class="form-control" id="InputEmail1"  placeholder="Enter email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
 
               <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -37,12 +37,12 @@
     
     
     <div class="sign-up">
-        <h3>sign up</h3>
+        <h3>Sign Up</h3>
 
         <form #signUp="ngForm" [formGroup]="registerForm1" >
 
               <div class="form-group">
-                  <label for="fullName">FULL NAME</label>
+                  <label for="fullName">Full Name</label>
                   <input ngModel name="fullName" type="text" formControlName="fullName" class="form-control" id="fullName" placeholder="Enter Full Name" [ngClass]="{ 'is-invalid': submitted1 && f1.fullName.errors }" >
                   <div *ngIf="submitted1 && f1.fullName.errors" class="invalid-feedback">
                       <div *ngIf="f1.fullName.errors.required">Full Name is required</div>
@@ -52,7 +52,7 @@
 
 
             <div class="form-group" >
-              <label for="InputEmail2">Email address</label>
+              <label for="InputEmail2">Email Address</label>
               <input ngModel name="email" type="email" formControlName="email" class="form-control" id="InputEmail2"  placeholder="Enter email" [ngClass]="{ 'is-invalid': submitted1 && f1.email.errors }">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
               <div *ngIf="submitted1 && f1.email.errors" class="invalid-feedback">
